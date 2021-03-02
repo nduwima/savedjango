@@ -1,0 +1,75 @@
+{% load widget_tweaks %}
+<!Doctype html>
+<html> 
+     <head>
+
+		<title>les formulaires</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>Simple is Better Than Complex</title>
+	</head>
+<body>
+	<form method="post" novalidate>
+		{% csrf_token %}
+	  
+		{% for hidden_field in form.hidden_fields %}
+		  {{ hidden_field }}
+		{% endfor %}
+	  
+		{% for field in form.visible_fields %}
+		  <div class="form-group">
+			{{ field.label_tag }}
+			{% render_field field class="form-control" %}
+			{% if field.help_text %}
+			  <small class="form-text text-muted">{{ field.help_text }}</small>
+			{% endif %}
+		  </div>
+		{% endfor %}
+	  
+		<button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
+	<body bgcolor="chocolate">
+	<h1><marquee>BIENVENUE SUR LE SITE DE KEVIN</marquee></h1>
+	
+<font size=60 color=white > <center>BIENVENUE AU LYCEE TECHNIQUE DE LA PLAINE<center></font>
+<div align="left" style="background-color:orange; width=:50%;border:1px solid; border-radius:20px;">
+    <body bgcolor="#a2d9ce">
+	<p class="style1" >FORMULAIRE D'ENREGISTREMENT EN LIGNE</p>
+    <form id="form1"name="form1"method="post"action="">
+        <label>NOM: </label>
+		<input type="text" value=""/><br><br>
+        <label>PRENOM: </label>
+		<input name="texterea3" type="text"value=""/><br><br>
+        <label>FONCTION: </label>
+		<input name="textarea3" type="text" value=""/><br><br>
+       SEXE: 
+	   <label>M</label>
+	   <input type="checkbox" name="checkbox" value="checkbox"/>
+       <label>F</label> 
+	   <input type="checkbox" name="checkbox2" value="checkbox"/><br><br>
+       <label>PAYS:
+	   <select name="select"size="1"></label><br><br>
+			<option>RDC</option>
+			<option>BURUNDI</option>
+			<option>RWANDA</option><option>KENYA</option><option>TANZANIE</option>
+			<option>AUTRES</option>
+	   </select>   
+	   <br><br> 
+     DIPLOME:
+	 <label> OUI</label>
+	 <input type="radio" name="radiobutton" value="radiobutton"/>
+     <label> NON</label>
+	  <input type="radio" name="radiobutton"value="radiobutton"/>  <br><br> 
+      <label>COMMENTAIRES ET SUGGESTIONS:</label><br><br><br>
+      <textarea name="textarea4" cols="30" rows="5"></textarea> <br><br> 
+     <label>MOT DE PASS</label>
+	 <input type="password" name="textfield"/> <br><br>
+     <input type="submit" name="submit" value="Envoyer"/>
+      Effacer:<input  type="reset" name="Effacer" value="DEL"/>
+	  <br><br><br>
+    </form>
+  </body>
+</div>
+</body>
+</html>
